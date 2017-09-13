@@ -8,7 +8,7 @@ import getLoadMsg from "./loading";
 
 
 
-$("body").html(`<span class="load"><h1>${getLoadMsg()}</h1></span>`);
+$(".container").text(`${getLoadMsg()}`);
 /**
  * require style imports
  */
@@ -21,7 +21,7 @@ getMovies().then((movies) => {
      movie += (`id#${id} - ${title} - rating: ${rating}`);
   });
 
-      $("body").html('').append(movie);
+      $(".movieList").html('').append(movie);
 
 }).catch((error) => {
   alert('Oh no! Something went wrong.\nCheck the console for details.');
