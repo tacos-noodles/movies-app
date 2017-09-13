@@ -16,9 +16,13 @@ const getMovies = require('./getMovies.js');
 
 getMovies().then((movies) => {
   console.log('Here are all the movies:');
+  let movie = "";
   movies.forEach(({title, rating, id}) => {
-      $("body").html(`id#${id} - ${title} - rating: ${rating}`);
+     movie += (`id#${id} - ${title} - rating: ${rating}`);
   });
+
+      $("body").html('').append(movie);
+
 }).catch((error) => {
   alert('Oh no! Something went wrong.\nCheck the console for details.');
   console.log(error);
