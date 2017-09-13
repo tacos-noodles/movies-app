@@ -8,7 +8,7 @@ import getLoadMsg from "./loading";
 
 
 
-$("body").html("<h1>${getLoadMsg}</h1>");
+$("body").html(`<h1>${getLoadMsg()}</h1>`);
 /**
  * require style imports
  */
