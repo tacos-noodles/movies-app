@@ -3,26 +3,39 @@
 <head>
     <meta charset="UTF-8" />
     <title>My Application</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-    <div class="container">
-        <!--<h1>Hello There!</h1>-->
-        <!--<p>To get started, edit <code>src/index.js</code>.</p>-->
-    </div>
-    <div id="inputs">
+<div id="inputs">
 
     <form id='add' method="post" action="/api/movies">
         <label for="title">Enter Movie Name</label>
-            <input type="text" id="title" name="title" >
+        <input type="text" id="title" name="title" >
         <br>
         <label for="rating">Enter Rating</label>
-            <input type="text" id="rating" name="rating" >
-    <button id="button" type="submit">Submit</button>
+        <input type="text" id="rating" name="rating" >
+        <button id="button" type="submit">Submit</button>
+        <button id="btn" type="submit">Edit</button>
     </form>
 
-    </div>
+</div>
+    <div class="container">
+      <div id="load">
 
+      </div>
+
+        <table id="titleList" class="table" >
+          <thead style="border: 1px solid #858EA4">
+            <th>ID </th>
+            <th>Title</th>
+            <th>Rating</th>
+          </thead>
+          <tbody id="movieList">
+            <!--ajax modified content-->
+          </tbody>
+
+      </table>
+    </div>
     <script src="/main.js"></script>
 </body>
 </html>

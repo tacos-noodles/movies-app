@@ -16,19 +16,9 @@
       "id": 3
     },
     {
-      "title": "the notebook",
-      "rating": "4",
-      "id": 5
-    },
-    {
-      "title": "mickey",
-      "rating": "4",
-      "id": 6
-    },
-    {
-      "title": "godzilla",
-      "rating": "5",
-      "id": 7
+      "title": "IT",
+      "rating": "6",
+      "id": 4
     }
   ]
 }

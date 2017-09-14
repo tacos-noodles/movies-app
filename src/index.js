@@ -8,7 +8,9 @@ import getLoadMsg from "./loading";
 
 
 $('#inputs').hide();
-$(".container").text(`${getLoadMsg()}`);
+$("#load").text(`${getLoadMsg()}`);
+$('.table').hide();
+
 /**
  * require style imports
  */
@@ -18,13 +20,16 @@ function initReq() {
     getMovies().then((movies) => {
         // console.log('Here are all the movies:');
         let movie = "";
+        let tr= " ";
         movies.forEach(({title, rating, id}) => {
-            movie += (`id#${id} - ${title} - rating: ${rating}`);
+           movie +=
+                (`<tr><td>id#${id}</td><td>${title}</td><td>${rating}</td><td><a href="#" class="editMovie">Edit</a></td><td>Delete</td></tr>`);
         });
 
-        $(".container").html('').append(movie);
+        $("#movieList").html('').append(movie);
         $('#inputs').show();
-
+        $(".table").show();
+        $('#load').hide();
 
     }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.');
@@ -43,24 +48,30 @@ $(function () {
         $.ajax({
             type: 'post',
             url: '/api/movies',
-            data: $('form').serialize(),
-            success: function () {
-                alert('form was submitted');
-            }
-        });
+            data: $('form').serialize()
+        }).then(initReq());
     });
 });
 
-function showMovies() {
-    let movie = "";
-    getMovies().then((movies) => {
-        movies.forEach(({title, rating, id}) => {
-            movie += (`id#${id} - ${title} - rating: ${rating}`);
-        });
+$(function () {
 
-        $(".container").html('').append(movie);
-    })
-}
+    $('#btn').on('submit', function (e) {
+
+        e.preventDefault();
+
+        $.ajax({
+            type: 'PATCH',
+            url: '/api/movies',
+            data: $('form').serialize(),
+        }).then(initReq());
+    });
+});
+
+$('.edit').click(function (event){
+    event.preventDefault();
+    console.log($(this).attr('href'));
+})
+
 
 
 
