@@ -2,9 +2,21 @@ html, body {
     height: 100%;
 }
 
+th{
+    text-align: center;
+    background-color: cadetblue;
+    color: white;
+    font-size: larger;
+}
 #inputs {
     display: block;
     text-align: center;
+}
+
+#load{
+    /*background-image: url('../img/loading.gif');*/
+    border: 1px solid pink;
+    height: 100%;
 }
 
 .container {
@@ -12,6 +24,7 @@ html, body {
     top: 50%;
     transform: translateY(-100%);
     text-align: center;
+    margin-top: 100px
 }
 
 #titleList {

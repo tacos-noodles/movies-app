@@ -22,7 +22,7 @@ function initReq() {
         let movie = "";
         movies.forEach(({title, rating, id}) => {
            movie +=
-                (`<tr><td>id#${id}</td><td>${title}</td><td>${rating}</td><td><div class="editMovie">Edit</div></td><td>Delete</td></tr>`);
+                (`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><div class="editMovie">Edit</div></td><td>Delete</td></tr>`);
         });
 
         $("#movieList").html('').append(movie);
@@ -55,15 +55,15 @@ $(function () {
     });
 });
 
-fetch('/api/movies/', {
-    headers: {
-        "content-type": "application/json"
-    },
-    method: "POST",
-    body: JSON.stringify({param1, param2, ...})
-}).then( (response) => {
-    response.json();
-});
+// fetch('/api/movies/', {
+//     headers: {
+//         "content-type": "application/json"
+//     },
+//     method: "POST",
+//     body: JSON.stringify({param1, param2, ...})
+// }).then( (response) => {
+//     response.json();
+// });
 
 
 
