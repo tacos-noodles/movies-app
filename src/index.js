@@ -20,10 +20,9 @@ function initReq() {
     getMovies().then((movies) => {
         // console.log('Here are all the movies:');
         let movie = "";
-        let tr= " ";
         movies.forEach(({title, rating, id}) => {
            movie +=
-                (`<tr><td>id#${id}</td><td>${title}</td><td>${rating}</td><td><a href="#" class="editMovie">Edit</a></td><td>Delete</td></tr>`);
+                (`<tr><td>id#${id}</td><td>${title}</td><td>${rating}</td><td><div class="editMovie">Edit</div></td><td>Delete</td></tr>`);
         });
 
         $("#movieList").html('').append(movie);
@@ -48,29 +47,51 @@ $(function () {
         $.ajax({
             type: 'post',
             url: '/api/movies',
-            data: $('form').serialize()
+            data: $('form').serialize(),
+            success: function () {
+                alert('form was submitted');
+            }
         }).then(initReq());
     });
 });
 
+fetch('/api/movies/', {
+    headers: {
+        "content-type": "application/json"
+    },
+    method: "POST",
+    body: JSON.stringify({param1, param2, ...})
+}).then( (response) => {
+    response.json();
+});
+
+
+
+
+
+
 $(function () {
 
-    $('#btn').on('submit', function (e) {
+    $('#btn').on('edit', function (e) {
 
         e.preventDefault();
 
         $.ajax({
-            type: 'PATCH',
+            type: 'PUT',
             url: '/api/movies',
             data: $('form').serialize(),
         }).then(initReq());
     });
 });
 
-$('.edit').click(function (event){
-    event.preventDefault();
-    console.log($(this).attr('href'));
-})
+$('#movieList').delegate(".editMovie", 'click', function(e){
+    e.preventDefault();
+    console.log('clicked');
+    $('#id').val($(e.target).parent().parent().find('td').eq(0).text());
+    $('#title').val($(e.target).parent().parent().find('td').eq(1).text());
+    $('#rating').val($(e.target).parent().parent().find('td').eq(2).text());
+});
+
 
 
 
