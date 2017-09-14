@@ -6,18 +6,26 @@
     <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-
     <div class="container">
         <!--<h1>Hello There!</h1>-->
         <!--<p>To get started, edit <code>src/index.js</code>.</p>-->
     </div>
-    <div class="movieList">
-    </div>
-    <form id="add" action="POST">
-        Enter Movie Name: <input type="text" id="addMovie" name="addMovie" >
-        Enter Rating: <input type="text" id="addRating" name="addRating" >
-        <button name="Submit"></button>
+    <span id="inputs">
+    <form id="add" action="/api/movies" method="POST">
+        <label for="title">Enter Movie Name</label>
+            <input type="text" id="title" name="title" >
+        <label for="rating">Enter Rating</label>
+            <input type="text" id="rating" name="rating" >
+    <button type="submit">Submit</button>
     </form>
+    </span>
+
+
+
+
+
+
+
 
 
 

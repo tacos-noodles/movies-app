@@ -9,6 +9,28 @@
       "title": "Star Wars: A New Hope",
       "rating": "5",
       "id": 2
+    },
+    {
+      "title": "Hitchhiker's Guide to the Galaxy ",
+      "rating": "5",
+      "id": 3
+    },
+    {
+      "addMovie": "the notebook",
+      "addRating": "3",
+      "submitButton": "Submit",
+      "id": 4
+    },
+    {
+      "title": "the notebook",
+      "rating": "4",
+      "submitButton": "Submit",
+      "id": 5
+    },
+    {
+      "title": "xmen",
+      "rating": "5",
+      "id": 6
     }
   ]
 }

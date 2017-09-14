@@ -1,5 +1,5 @@
 const getLoadMsg = () => {
-    return "Loading";
+    return "Loading...";
 
 };
 

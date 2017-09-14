@@ -2,6 +2,11 @@ html, body {
     height: 100%;
 }
 
+#inputs {
+    display: block;
+    text-align: center;
+}
+
 .container {
     position: relative;
     top: 50%;
@@ -9,7 +14,3 @@ html, body {
     text-align: center;
 }
 
-.load {
-    height: 100%;
-    background-image: url();
-}
