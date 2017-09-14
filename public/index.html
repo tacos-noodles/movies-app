@@ -10,24 +10,18 @@
         <!--<h1>Hello There!</h1>-->
         <!--<p>To get started, edit <code>src/index.js</code>.</p>-->
     </div>
-    <span id="inputs">
-    <form id="add" action="/api/movies" method="POST">
+    <div id="inputs">
+
+    <form id='add' method="post" action="/api/movies">
         <label for="title">Enter Movie Name</label>
             <input type="text" id="title" name="title" >
+        <br>
         <label for="rating">Enter Rating</label>
             <input type="text" id="rating" name="rating" >
-    <button type="submit">Submit</button>
+    <button id="button" type="submit">Submit</button>
     </form>
-    </span>
 
-
-
-
-
-
-
-
-
+    </div>
 
     <script src="/main.js"></script>
 </body>

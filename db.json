@@ -16,21 +16,19 @@
       "id": 3
     },
     {
-      "addMovie": "the notebook",
-      "addRating": "3",
-      "submitButton": "Submit",
-      "id": 4
-    },
-    {
       "title": "the notebook",
       "rating": "4",
-      "submitButton": "Submit",
       "id": 5
     },
     {
-      "title": "xmen",
-      "rating": "5",
+      "title": "mickey",
+      "rating": "4",
       "id": 6
+    },
+    {
+      "title": "godzilla",
+      "rating": "5",
+      "id": 7
     }
   ]
 }
