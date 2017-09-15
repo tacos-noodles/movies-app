@@ -1,12 +1,7 @@
 {
   "movies": [
     {
-      "title": "Star Wars",
-      "rating": "5",
-      "id": 2
-    },
-    {
-      "title": "IT",
+      "title": "Pet Semetary",
       "rating": "4",
       "id": 6
     },
@@ -16,23 +11,23 @@
       "id": 9
     },
     {
-      "title": "fer",
+      "title": "jaws 2",
       "rating": "4",
       "id": 18
     },
     {
-      "title": "final test",
+      "title": "Killer Clowns...",
       "rating": "4",
       "id": 29
     },
     {
-      "title": "fer",
-      "rating": "1",
+      "title": "Movie Name",
+      "rating": "2",
       "id": 31
     },
     {
-      "title": "test",
-      "rating": "5",
+      "title": "Stomp the Yard",
+      "rating": "2",
       "id": 32
     }
   ]

@@ -33,19 +33,23 @@
                 <!--<button id="button" type="submit" class="btn btn-primary">Submit</button>-->
             <!--</form>-->
         <!--</div>-->
-        <div id="edit" style="border:1px solid pink;">
-            <label for="update">Edit Movie Name</label>
-            <form id='update' method="POST">
-                <input id="id" type="hidden">
-                <input type="text" id="titleTwo" name="titleTwo" >
-                <br>
-                <input type="text" id="ratingTwo" name="ratingTwo">
-                <br>
-                <!--<label for="rating">Enter Rating</label>-->
-                <!--<input type="text" id="rating" name="rating" ><br>-->
-                <button id="btn" type="submit" class="btn btn-warning">Update</button>
-            </form>
-        </div>
+
+    <!--Edit info commented out for time being-->
+        <!--<div id="edit" style="border:1px solid pink;">-->
+            <!--<label for="update">Edit Movie Name</label>-->
+            <!--<form id='update' method="POST">-->
+                <!--<input id="id" type="hidden">-->
+                <!--<input type="text" id="titleTwo" name="titleTwo" >-->
+                <!--<br>-->
+                <!--<input type="text" id="ratingTwo" name="ratingTwo">-->
+                <!--<br>-->
+                <!--&lt;!&ndash;<label for="rating">Enter Rating</label>&ndash;&gt;-->
+                <!--&lt;!&ndash;<input type="text" id="rating" name="rating" ><br>&ndash;&gt;-->
+                <!--<button id="btn" type="submit" class="btn btn-warning">Update</button>-->
+            <!--</form>-->
+        <!--</div>-->
+
+
 
     <!--<div class="container">-->
       <div id="load">
@@ -105,6 +109,40 @@
     </div>
     </div>
     <!--Modal Add end-->
+
+    <!--Beginning of edit modal-->
+
+    <div id="inputsEdit" style="border:1px solid orange;">
+        <!-- Modal -->
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabelEdit">Edit Movie</h5>
+                        <label for="update">Edit Movie</label>
+
+                    </div>
+                    <div id="edit">
+                        <label for="update">Edit Movie Name</label>
+                        <form id='update' method="POST">
+                            <input id="id" type="hidden">
+                            <input type="text" id="titleTwo" name="titleTwo" >
+                            <br>
+                            <input type="text" id="ratingTwo" name="ratingTwo">
+                            <br>
+                            <button id="btn" type="submit" class="btn btn-warning">Update</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <form action="#">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End of edit modal-->
 
 
 

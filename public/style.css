@@ -27,10 +27,10 @@ h2 {
 }
 
 #edit {
-    float: right;
+    float: left;
     /*width: 720px;*/
     display: inline-block;
-    /*text-align: right;*/
+    padding: 3em;
 }
 
 #load{

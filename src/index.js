@@ -23,7 +23,7 @@ function initReq() {
         let movie = "";
         movies.forEach(({title, rating, id}) => {
            movie +=
-                (`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button type="button" class="editMovie">Edit</button></td><td><button class="delete" type="button">Delete</button></td></tr>`);
+                (`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button type="button" class="editMovie" data-toggle="modal" data-target="#editModal">Edit</button></td><td><button class="delete" type="button">Delete</button></td></tr>`);
         });
 
         $("#movieList").html('').append(movie);
