@@ -2,7 +2,6 @@
  * es6 modules and imports
  */
 import sayHello from './hello';
-import $ from "jquery";
 sayHello('World');
 import getLoadMsg from "./loading";
 
@@ -65,6 +64,8 @@ function showEdit(){
             })
         }).then(() => {
             initReq();
+            $("#myModal").modal("toggle");
+
         }).then(() =>{
             clearAdd();
         })
@@ -97,7 +98,8 @@ function showEdit(){
                 "genre": document.getElementById('genreTwo').value
             })
         }).then(() => {
-            initReq()})
+            initReq();
+        });
     });
 
     $('#movieList').delegate(".delete", 'click', function (e) {
