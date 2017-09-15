@@ -51,6 +51,8 @@ $(function () {
                 "title": document.getElementById('title').value,
                 "rating": document.getElementById('rating').value
             })
+        }).then(() => {
+            initReq();
         })
     });
 });
@@ -71,14 +73,18 @@ $(function () {
                 "title": document.getElementById('titleTwo').value,
                 "rating": document.getElementById('ratingTwo').value
             })
-        })
+        }).then(() => {
+            initReq()})
     })
 });
-$(function () {
 
-    $('').on('submit', function (e) {
+
+$(function () {
+    $('#movieList').delegate(".delete", 'click', function (e) {
         e.preventDefault();
-        let id = document.getElementById('id').value;
+
+        let id = e.target.parentElement.parentElement.children[0].innerHTML;//document.getElementById('id').value;
+        console.log(id);
         fetch(`/api/movies/${id}`, {
 
             headers: {
@@ -86,18 +92,12 @@ $(function () {
             },
             method: 'DELETE',
             body: JSON.stringify({
-                "title": document.getElementById('titleTwo').value,
-                "rating": document.getElementById('ratingTwo').value
+                "id": id
             })
-        }).then(initReq());
+        }).then(() => {
+            initReq();
+        })
     })
-});
-
-$('#movieList').delegate(".delete", 'click', function(e){
-    e.preventDefault();
-    $('#id').val($(e.target).parent().parent().find('td').eq(0).text());
-    $('#titleTwo').val($(e.target).parent().parent().find('td').eq(1).text());
-    $('#ratingTwo').val($(e.target).parent().parent().find('td').eq(2).text());
 });
 
 
