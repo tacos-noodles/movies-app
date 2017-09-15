@@ -22,7 +22,7 @@ function initReq() {
         let movie = "";
         movies.forEach(({title, rating, id}) => {
            movie +=
-                (`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><div class="editMovie">Edit</div></td><td>Delete</td></tr>`);
+                (`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button type="button" class="editMovie">Edit</button></td><td><button type="button">Delete</button></td></tr>`);
         });
 
         $("#movieList").html('').append(movie);
@@ -60,7 +60,7 @@ $(function () {
     $('#update').on('submit', function (e) {
         e.preventDefault();
         let id = document.getElementById('id').value;
-
+// we have to pass the value of the ID to target the db and modify it
         fetch(`/api/movies/${id}`, {
 
             headers: {
@@ -74,6 +74,26 @@ $(function () {
         }).then(initReq());
     })
 });
+$(function () {
+
+    $('').on('submit', function (e) {
+        e.preventDefault();
+        let id = document.getElementById('id').value;
+        fetch(`/api/movies/${id}`, {
+
+            headers: {
+                "content-type": "application/json"
+            },
+            method: 'DELETE',
+            body: JSON.stringify({
+                "title": document.getElementById('titleTwo').value,
+                "rating": document.getElementById('ratingTwo').value
+            })
+        }).then(initReq());
+    })
+});
+
+
 
 $('#movieList').delegate(".editMovie", 'click', function(e){
     e.preventDefault();

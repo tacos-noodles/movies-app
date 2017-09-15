@@ -2,7 +2,7 @@
   "movies": [
     {
       "title": "Casablanca",
-      "rating": "3",
+      "rating": "2",
       "id": 1
     },
     {
@@ -12,13 +12,23 @@
     },
     {
       "title": "Hitchhiker's Guide to the Galaxy ",
-      "rating": "5",
+      "rating": "10",
       "id": 3
     },
     {
       "title": "IT",
-      "rating": "6",
+      "rating": "3",
       "id": 4
+    },
+    {
+      "title": "wedding crashers",
+      "rating": "3",
+      "id": 5
+    },
+    {
+      "title": "house",
+      "rating": "6",
+      "id": 6
     }
   ]
 }
