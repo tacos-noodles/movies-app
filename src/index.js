@@ -22,7 +22,7 @@ function initReq() {
         let movie = "";
         movies.forEach(({title, rating, id}) => {
            movie +=
-                (`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button type="button" class="editMovie">Edit</button></td><td><button type="button">Delete</button></td></tr>`);
+                (`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button type="button" class="editMovie">Edit</button></td><td><button class="delete" type="button">Delete</button></td></tr>`);
         });
 
         $("#movieList").html('').append(movie);
@@ -51,7 +51,7 @@ $(function () {
                 "title": document.getElementById('title').value,
                 "rating": document.getElementById('rating').value
             })
-        }).then(initReq());
+        })
     });
 });
 
@@ -71,7 +71,7 @@ $(function () {
                 "title": document.getElementById('titleTwo').value,
                 "rating": document.getElementById('ratingTwo').value
             })
-        }).then(initReq());
+        })
     })
 });
 $(function () {
@@ -91,6 +91,13 @@ $(function () {
             })
         }).then(initReq());
     })
+});
+
+$('#movieList').delegate(".delete", 'click', function(e){
+    e.preventDefault();
+    $('#id').val($(e.target).parent().parent().find('td').eq(0).text());
+    $('#titleTwo').val($(e.target).parent().parent().find('td').eq(1).text());
+    $('#ratingTwo').val($(e.target).parent().parent().find('td').eq(2).text());
 });
 
 
