@@ -11,6 +11,7 @@ $('#inputs').hide();
 $('#myModalBtn').hide();
 $('.table').hide();
 $('#edit').hide();
+$('#pagination').hide();
 
 /**
  * require style imports
@@ -25,7 +26,7 @@ const getMovies = require('./getMovies.js');
             let movie = "";
             movies.forEach(({title, rating, id}) => {
                movie +=
-                    (`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button type="button" class="editMovie" data-toggle="modal"                                   data-target="#editModal">Edit</button></td><td><button class="delete" type="button">Delete</button></td></tr>`);
+                    (`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button type="button" class="editMovie" data-toggle="modal" data-target="#editModal">Edit</button></td><td><button class="delete" type="button">Delete</button></td></tr>`);
             });
 
             $("#movieList").html('').append(movie);
@@ -33,6 +34,7 @@ const getMovies = require('./getMovies.js');
             $(".table").show();
             $('#load').hide();
             $('#myModalBtn').show();
+            $('#pagination').show();
 
 
         }).catch((error) => {
@@ -62,12 +64,20 @@ function showEdit(){
             })
         }).then(() => {
             initReq();
-
-            // console.log($('#myModal'));
-        });
+        }).then(() =>{
+            clearAdd();
+        })
         // $('#myModal').modal('hide');
         // $(this).hide();
     });
+
+    function clearAdd(){
+        $('#title').val('');
+        $('#rating').val('');
+        // document.getElementById('title').innerHTML.value();
+        // document.getElementById('rating').innerHTML.value();
+
+    }
 
     $('#update').on('submit', function (e) {
         e.preventDefault();
@@ -91,7 +101,6 @@ function showEdit(){
         e.preventDefault();
 
         let id = e.target.parentElement.parentElement.children[0].innerHTML;//document.getElementById('id').value;
-        console.log(id);
         fetch(`/api/movies/${id}`, {
 
             headers: {
