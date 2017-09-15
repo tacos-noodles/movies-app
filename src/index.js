@@ -15,7 +15,7 @@ $('.table').hide();
  * require style imports
  */
 const getMovies = require('./getMovies.js');
-
+//init req for getMovies. this is our first ajax call
 function initReq() {
     getMovies().then((movies) => {
         // console.log('Here are all the movies:');
@@ -35,61 +35,51 @@ function initReq() {
         console.log(error);
     })
 }
-
+//here we call the function
 initReq();
-
+// this is our function to post the input data to our database (db.json) and a we recall initReq() to post our new list
 $(function () {
 
-    $('form').on('submit', function (e) {
-
+    $('#add').on('submit', function (e) {
         e.preventDefault();
-
-        $.ajax({
-            type: 'post',
-            url: '/api/movies',
-            data: $('form').serialize(),
-            success: function () {
-                alert('form was submitted');
-            }
+        fetch("/api/movies", {
+            headers: {
+                "content-type": "application/json"
+            },
+            method: "POST",
+            body: JSON.stringify({
+                "title": document.getElementById('title').value,
+                "rating": document.getElementById('rating').value
+            })
         }).then(initReq());
     });
 });
 
-// fetch('/api/movies/', {
-//     headers: {
-//         "content-type": "application/json"
-//     },
-//     method: "POST",
-//     body: JSON.stringify({param1, param2, ...})
-// }).then( (response) => {
-//     response.json();
-// });
-
-
-
-
-
-
 $(function () {
 
-    $('#btn').on('edit', function (e) {
-
+    $('#update').on('submit', function (e) {
         e.preventDefault();
+        let id = document.getElementById('id').value;
 
-        $.ajax({
-            type: 'PUT',
-            url: '/api/movies',
-            data: $('form').serialize(),
+        fetch(`/api/movies/${id}`, {
+
+            headers: {
+                "content-type": "application/json"
+            },
+            method: 'PUT',
+            body: JSON.stringify({
+                "title": document.getElementById('titleTwo').value,
+                "rating": document.getElementById('ratingTwo').value
+            })
         }).then(initReq());
-    });
+    })
 });
 
 $('#movieList').delegate(".editMovie", 'click', function(e){
     e.preventDefault();
-    console.log('clicked');
     $('#id').val($(e.target).parent().parent().find('td').eq(0).text());
-    $('#title').val($(e.target).parent().parent().find('td').eq(1).text());
-    $('#rating').val($(e.target).parent().parent().find('td').eq(2).text());
+    $('#titleTwo').val($(e.target).parent().parent().find('td').eq(1).text());
+    $('#ratingTwo').val($(e.target).parent().parent().find('td').eq(2).text());
 });
 
 

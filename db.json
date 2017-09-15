@@ -2,7 +2,7 @@
   "movies": [
     {
       "title": "Casablanca",
-      "rating": "4",
+      "rating": "3",
       "id": 1
     },
     {
@@ -19,16 +19,6 @@
       "title": "IT",
       "rating": "6",
       "id": 4
-    },
-    {
-      "title": "Stand By Me",
-      "rating": "5",
-      "id": 5
-    },
-    {
-      "title": "g",
-      "rating": "23",
-      "id": 6
     }
   ]
 }

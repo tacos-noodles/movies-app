@@ -12,21 +12,30 @@
 </head>
 <body>
     <div id="inputs">
-        <form id='add' method="post" action="/api/movies">
-            <input id="id" type="hidden"><br>
-            <label for="title">Enter Movie Name</label>
+        <label for="add">Enter Movie</label>
+        <form id='add' method="POST">
+            <input type="hidden">
+            <label for="title">Enter Name </label>
             <input type="text" id="title" name="title" >
             <br>
             <label for="rating">Enter Rating</label>
             <input type="text" id="rating" name="rating" ><br>
             <button id="button" type="submit" class="btn btn-primary">Submit</button>
-            <button id="btn" type="submit" class="btn btn-warning">Update</button>
-            <!--<button id="btn" type="submit" class="btn btn-danger">Delete</button>-->
         </form>
     </div>
-    <div class="container">
+    <div id="edit">
+        <label for="update">Edit Movie</label>
+        <form id='update' method="POST">
+            <input id="id" type="hidden">
+            <input type="text" id="titleTwo" name="titleTwo" >
+            <br>
+            <input type="text" id="ratingTwo" name="ratingTwo">
+            <br>
+            <button id="btn" type="submit" class="btn btn-warning">Update</button>
+        </form>
+    </div>
+    <!--<div class="container">-->
       <div id="load">
-
       </div>
 
         <table id="titleList" class="table table-striped">
@@ -43,7 +52,7 @@
           </tbody>
 
       </table>
-    </div>
+    <!--</div>-->
 <script
         src="http://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

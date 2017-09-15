@@ -9,6 +9,15 @@ th{
     font-size: larger;
 }
 #inputs {
+    width: 720px;
+    float: left;
+    display: block;
+    text-align: center;
+}
+
+#edit {
+    float: left;
+    width: 720px;
     display: block;
     text-align: center;
 }
@@ -28,6 +37,7 @@ th{
 }
 
 #titleList {
+    clear: both;
    margin-left: auto;
     margin-right: auto;
 
