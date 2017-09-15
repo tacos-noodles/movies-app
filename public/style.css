@@ -13,7 +13,10 @@ th{
 }
 .jumbotron {
     background-image: url('img/popcorn.jpg');
-    opacity: 0.5;
+}
+
+h3  {
+    text-align: center;
 }
 
 h2 {
@@ -26,11 +29,21 @@ h2 {
     /*text-align: left;*/
 }
 
+
+
 #edit {
     float: left;
     /*width: 720px;*/
     display: inline-block;
     padding: 3em;
+}
+
+#movieContainer{
+    padding: 50px;
+}
+
+td {
+    text-align: center;
 }
 
 #load{
