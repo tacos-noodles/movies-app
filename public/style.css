@@ -1,5 +1,8 @@
 html, body {
     height: 100%;
+    background-color: #faf4ce;
+    font-family: Didot;
+    font-size: 20px;
 }
 
 th{
@@ -8,24 +11,41 @@ th{
     color: white;
     font-size: larger;
 }
+.jumbotron {
+    background-image: url('img/popcorn.jpg');
+    opacity: 0.5;
+}
+
+h2 {
+    margin-top:-50px;
+}
 #inputs {
-    width: 720px;
-    float: left;
-    display: block;
-    text-align: center;
+    /*width: 720px;*/
+    float: left;*
+    display: inline-block;
+    /*text-align: left;*/
 }
 
 #edit {
-    float: left;
-    width: 720px;
-    display: block;
-    text-align: center;
+    float: right;
+    /*width: 720px;*/
+    display: inline-block;
+    /*text-align: right;*/
 }
 
 #load{
-    /*background-image: url('../img/loading.gif');*/
-    border: 1px solid pink;
-    height: 100%;
+    background-image: url('img/loadingColor.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    margin-top: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Didot;
+    color: #7f7f7f;
 }
 
 .container {
@@ -33,13 +53,21 @@ th{
     top: 50%;
     transform: translateY(-100%);
     text-align: center;
-    margin-top: 100px
+    margin-top: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #titleList {
-    clear: both;
-   margin-left: auto;
-    margin-right: auto;
+    /*clear: both;*/
+   /*margin-left: auto;*/
+    /*margin-right: auto;*/
 
+}
+
+table{
+    background-color: #ffffff;
 }
 

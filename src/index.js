@@ -8,8 +8,9 @@ import getLoadMsg from "./loading";
 
 
 $('#inputs').hide();
-$("#load").text(`${getLoadMsg()}`);
+$('#myModalBtn').hide();
 $('.table').hide();
+$('#edit').hide();
 
 /**
  * require style imports
@@ -29,6 +30,8 @@ function initReq() {
         $('#inputs').show();
         $(".table").show();
         $('#load').hide();
+        $('#myModalBtn').show();
+
 
     }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.');
@@ -38,9 +41,16 @@ function initReq() {
 //here we call the function
 initReq();
 // this is our function to post the input data to our database (db.json) and a we recall initReq() to post our new list
+
+function showEdit(){
+    return  $('#edit').show();
+}
+
+
 $(function () {
 
-    $('#add').on('submit', function (e) {
+    $('#add-movie-btn').click( function (e) {
+        // $(this).show();
         e.preventDefault();
         fetch("/api/movies", {
             headers: {
@@ -53,7 +63,11 @@ $(function () {
             })
         }).then(() => {
             initReq();
-        })
+
+            // console.log($('#myModal'));
+        });
+        // $('#myModal').modal('hide');
+        // $(this).hide();
     });
 });
 
@@ -104,6 +118,7 @@ $(function () {
 
 $('#movieList').delegate(".editMovie", 'click', function(e){
     e.preventDefault();
+    $('#edit').show();
     $('#id').val($(e.target).parent().parent().find('td').eq(0).text());
     $('#titleTwo').val($(e.target).parent().parent().find('td').eq(1).text());
     $('#ratingTwo').val($(e.target).parent().parent().find('td').eq(2).text());

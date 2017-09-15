@@ -1,19 +1,39 @@
 {
   "movies": [
     {
-      "title": "Casablanca",
-      "rating": "2",
-      "id": 1
-    },
-    {
-      "title": "Star Wars: A New Hope",
+      "title": "Star Wars",
       "rating": "5",
       "id": 2
     },
     {
-      "title": "iofnoi",
-      "rating": "3",
-      "id": 5
+      "title": "IT",
+      "rating": "4",
+      "id": 6
+    },
+    {
+      "title": "Home Alone 2",
+      "rating": "2",
+      "id": 9
+    },
+    {
+      "title": "fer",
+      "rating": "4",
+      "id": 18
+    },
+    {
+      "title": "final test",
+      "rating": "4",
+      "id": 29
+    },
+    {
+      "title": "fer",
+      "rating": "1",
+      "id": 31
+    },
+    {
+      "title": "test",
+      "rating": "5",
+      "id": 32
     }
   ]
 }
