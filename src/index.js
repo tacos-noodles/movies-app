@@ -24,9 +24,9 @@ const getMovies = require('./getMovies.js');
         getMovies().then((movies) => {
             // console.log('Here are all the movies:');
             let movie = "";
-            movies.forEach(({title, rating, id}) => {
+            movies.forEach(({title, rating, id, genre}) => {
                movie +=
-                    (`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button type="button" class="editMovie" data-toggle="modal" data-target="#editModal">Edit</button></td><td><button class="delete" type="button">Delete</button></td></tr>`);
+                    (`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td>${genre}</td><td><button type="button" class="editMovie" data-toggle="modal" data-target="#editModal">Edit</button></td><td><button class="delete" type="button">Delete</button></td></tr>`);
             });
 
             $("#movieList").html('').append(movie);
@@ -60,7 +60,8 @@ function showEdit(){
             method: "POST",
             body: JSON.stringify({
                 "title": document.getElementById('title').value,
-                "rating": document.getElementById('rating').value
+                "rating": document.getElementById('rating').value,
+                "genre": document.getElementById('genre').value
             })
         }).then(() => {
             initReq();
@@ -74,6 +75,7 @@ function showEdit(){
     function clearAdd(){
         $('#title').val('');
         $('#rating').val('');
+        $('#genre').val('');
         // document.getElementById('title').innerHTML.value();
         // document.getElementById('rating').innerHTML.value();
 
@@ -91,7 +93,8 @@ function showEdit(){
             method: 'PUT',
             body: JSON.stringify({
                 "title": document.getElementById('titleTwo').value,
-                "rating": document.getElementById('ratingTwo').value
+                "rating": document.getElementById('ratingTwo').value,
+                "genre": document.getElementById('genreTwo').value
             })
         }).then(() => {
             initReq()})
@@ -121,6 +124,8 @@ $('#movieList').delegate(".editMovie", 'click', function(e){
     $('#id').val($(e.target).parent().parent().find('td').eq(0).text());
     $('#titleTwo').val($(e.target).parent().parent().find('td').eq(1).text());
     $('#ratingTwo').val($(e.target).parent().parent().find('td').eq(2).text());
+    $('#genreTwo').val($(e.target).parent().parent().find('td').eq(3).text());
+
 });
 })();
 

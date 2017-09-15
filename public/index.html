@@ -24,6 +24,7 @@
                 <th>ID </th>
                 <th>Title</th>
                 <th>Rating</th>
+                <th>Genre</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -76,6 +77,16 @@
                     <br>
                     <label for="rating">Enter Rating</label>
                     <input id="rating" name="rating" ><br>
+                    <select id="genre">
+                        <option>Action</option>
+                        <option>Comedy</option>
+                        <option>Drama</option>
+                        <option>Foreign</option>
+                        <option>Horror</option>
+                        <option>Documentary</option>
+                        <option>Other</option>
+                    <label for="genre">Genre</label>
+                    </select><br>
                 </div>
                 <div class="modal-footer">
                     <form action="#">
@@ -109,6 +120,16 @@
                             <br>
                             <input type="text" id="ratingTwo" name="ratingTwo">
                             <br>
+                            <select class="form-control" id="genreTwo">
+                                <option>Action</option>
+                                <option>Comedy</option>
+                                <option>Drama</option>
+                                <option>Foreign</option>
+                                <option>Horror</option>
+                                <option>Documentary</option>
+                                <option>Other</option>
+                                <label for="genre">Genre</label>
+                            </select>
                             <button id="btn" type="submit" class="btn btn-warning">Update</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </form>

@@ -3,27 +3,32 @@
     {
       "title": "Pet Semetary",
       "rating": "4",
+      "genre": "Horror",
       "id": 6
     },
     {
       "title": "Home Alone 2",
       "rating": "2",
+      "genre": "Comedy",
       "id": 9
     },
     {
       "title": "jaws 2",
       "rating": "4",
+      "genre": "Drama",
       "id": 18
-    },
-    {
-      "title": "Killer Clowns...",
-      "rating": "4",
-      "id": 29
     },
     {
       "title": "Stomp the Yard",
       "rating": "2",
+      "genre": "Drama",
       "id": 32
+    },
+    {
+      "title": "Jaws",
+      "rating": "4",
+      "genre": "Action",
+      "id": 33
     }
   ]
 }
